@@ -52,13 +52,20 @@ for p in pokemons:
 
 
 
-
-def damage(mov, A, B, moves1):
-    """This function calculate the damage when a Pokemon A makes a move mov on pokemon B
+"""
     arguments: mov string name of the move being selected, A and B are two pokemon respectively the attacking one
     and the defending one, moves1 is a move object
     This function return damage done  .
+"""
+def damage(mov, A, B, moves1):
     """
+   This function calculate the damage when a Pokemon A makes a move mov on pokemon B
+   :param str mov:
+   :param str A: attacking pokemon name
+   :param str B: defending pokemon name
+   :param object moves1:  current move object
+   :return: damage done
+   """
     table = {
         'Normal': {'Normal': 1, 'Fire': 1, 'Water': 1, 'Electric': 1, 'Grass': 1},
         'Fire': {'Normal': 1, 'Fire': 0.5, 'Water': 0.5, 'Electric': 1, 'Grass': 2},
@@ -114,14 +121,22 @@ def damage(mov, A, B, moves1):
 
 
 
-
+# """This function execute the player game action , ask for input and display the outcome
+#     arguments : moves which is the a moves object , rocket_queue and player_queue are respectively the pokemon
+#     available for Team Rocket and the and the other team , damage_pokemon is the HP of the previous playing pokenon
+#     No return value
+#     """
 
 def playerGame(moves, rocket_queue, player_queue, damage_pokemon):
-    """This function execute the player game action , ask for input and display the outcome
-    arguments : moves which is the a moves object , rocket_queue and player_queue are respectively the pokemon
-    available for Team Rocket and the and the other team , damage_pokemon is the HP of the previous playing pokenon
-    No return value
     """
+    This function execute the player game action , ask for input and display the outcome
+    :param object moves: current move object
+    :param list rocket_queue: pokemon available for Team Rocket
+    :param list player_queue:  pokemon available for Team Player
+    :param int damage_pokemon: the HP of the previous playing pokenon
+    :return: None
+    """
+
     print("")
     if len(available) == len(player_queue[0].moves):
         available.clear()
@@ -165,14 +180,22 @@ def playerGame(moves, rocket_queue, player_queue, damage_pokemon):
 
 
 
-
+# """This function execute the Rocket team game action , ask for input and display the outcome
+#     arguments : moves which is the a moves object , rocket_queue and player_queue are respectively the pokemon
+#     available for Team Rocket and the and the other team , x is the HP of the previous playing pokenon
+#     No return value
+#     """
 
 def rocketGame(moves, rocket_queue, player_queue, x):
-    """This function execute the Rocket team game action , ask for input and display the outcome
-    arguments : moves which is the a moves object , rocket_queue and player_queue are respectively the pokemon
-    available for Team Rocket and the and the other team , x is the HP of the previous playing pokenon
-    No return value
     """
+    This function execute the Rocket team game action , ask for input and display the outcome
+    :param object moves:
+    :param list rocket_queue: pokemon available for Team Rocket
+    :param list player_queue:  pokemon available for Team Player
+    :param int x: HP of the previous playing pokenon
+    :return: None
+    """
+
     print("")
     m = random.choice(list(move for move in rocket_queue[0].moves))
     print(f"Team's Rocket {rocket_queue[0].name} cast{m} to {player_queue[0].name}: ")

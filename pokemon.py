@@ -2,6 +2,9 @@ import re
 
 
 class Pokemon:
+    """
+    This is the Pokemon class with all the pokemon attributes.
+    """
     def __init__(self, name='', typePokemon='', HP=0, attack=0,  defence=0, height=0, weight=0, moves=list):
         self.name=name
         self.typePokemon= typePokemon

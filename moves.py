@@ -1,5 +1,9 @@
 class Moves:
+    """
+        This is the Move class with all different moves and their characteristics
+    """
     def __init__(self, name='', typeMove='', category='', contest='',  PP=0, power=0, accuracy=0):
+
         self.name=name
         self.typeMove= typeMove
         self.category=category
