@@ -39,24 +39,7 @@ for p in pokemons:
         if s in (' "Self\'Destruct"', ' "Baby\'Doll Eyes"', ' "Mud\'Slap"', '"Mud\'Slap"', '"Double\'Edge"'):
             p.moves.remove(s)
 
-# for p in pokemons:
-#     for s in p.moves:
-#         print(p.moves)
 
-
-# for p in moves:
-#     print(p.name)
-
-# for s in rocket_queue:
-#     print(s)
-
-
-
-"""
-    arguments: mov string name of the move being selected, A and B are two pokemon respectively the attacking one
-    and the defending one, moves1 is a move object
-    This function return damage done  .
-"""
 def damage(mov, A, B, moves1):
     """
    This function calculate the damage when a Pokemon A makes a move mov on pokemon B
@@ -120,13 +103,6 @@ def damage(mov, A, B, moves1):
     return math.ceil(damageMade)
 
 
-
-# """This function execute the player game action , ask for input and display the outcome
-#     arguments : moves which is the a moves object , rocket_queue and player_queue are respectively the pokemon
-#     available for Team Rocket and the and the other team , damage_pokemon is the HP of the previous playing pokenon
-#     No return value
-#     """
-
 def playerGame(moves, rocket_queue, player_queue, damage_pokemon):
     """
     This function execute the player game action , ask for input and display the outcome
@@ -177,14 +153,6 @@ def playerGame(moves, rocket_queue, player_queue, damage_pokemon):
         return True
     print(f"Now {rocket_queue[0].name} has {damage_pokemonAB} HP, and {player_queue[0].name} has {damage_pokemon} HP.")
     return damage_pokemonAB
-
-
-
-# """This function execute the Rocket team game action , ask for input and display the outcome
-#     arguments : moves which is the a moves object , rocket_queue and player_queue are respectively the pokemon
-#     available for Team Rocket and the and the other team , x is the HP of the previous playing pokenon
-#     No return value
-#     """
 
 def rocketGame(moves, rocket_queue, player_queue, x):
     """
@@ -272,84 +240,6 @@ if x == 1:
             x = playerGame(moves, rocket_queue, player_queue, player_queue[0].HP)
         else:
             x = playerGame(moves, rocket_queue, player_queue, y)
-
-    # if x == True:
-    #     if len(rocket_queue)==0:
-    #         print(f"All of Team Rocket’s Pokemon fainted, and Team {playerName} prevails!")
-    #         sys.exit()
-    #     rocket_queue.pop(0)
-    #     if len(rocket_queue)==0:
-    #         print(f"All of Team Rocket’s Pokemon fainted, and Team {playerName} prevails!")
-    #         sys.exit()
-    #     print(f"Next for team Rocket , {rocket_queue[0].name} enters the battle!")
-    #     y = rocketGame(moves, rocket_queue, player_queue, rocket_queue[0].HP)
-    # else:
-    #     y = rocketGame(moves, rocket_queue, player_queue, x)
-    # if y == True:
-    #     if len(player_queue)==0:
-    #         print(f"All of Team {playerName}’s Pokemon fainted, and Team Rocket  prevails!")
-    #         sys.exit()
-    #     player_queue.pop(0)
-    #     if len(player_queue) == 0:
-    #         print(f"All of Team {playerName}’s Pokemon fainted, and Team Rocket  prevails!")
-    #         sys.exit()
-    #     print(f"Next for team {playerName} , {player_queue[0].name} enters the battle!")
-    #     n = playerGame(moves, rocket_queue, player_queue, player_queue[0].HP)
-    # else:
-    #     n = playerGame(moves, rocket_queue, player_queue, y)
-    #
-    # if n == True:
-    #     if len(rocket_queue)==0:
-    #         print(f"All of Team Rocket’s Pokemon fainted, and Team {playerName} prevails!")
-    #         sys.exit()
-    #     rocket_queue.pop(0)
-    #     if len(rocket_queue)==0:
-    #         print(f"All of Team Rocket’s Pokemon fainted, and Team {playerName} prevails!")
-    #         sys.exit()
-    #     print(f"Next for team Rocket , {rocket_queue[0].name} enters the battle!")
-    #     s = rocketGame(moves, rocket_queue, player_queue, rocket_queue[0].HP)
-    # else:
-    #     s = rocketGame(moves, rocket_queue, player_queue, n)
-    #
-    # if s == True:
-    #     if len(player_queue)==0:
-    #         print(f"All of Team {playerName}’s Pokemon fainted, and Team Rocket  prevails!")
-    #         sys.exit()
-    #     player_queue.pop(0)
-    #     if len(player_queue)==0:
-    #         print(f"All of Team {playerName}’s Pokemon fainted, and Team Rocket  prevails!")
-    #         sys.exit()
-    #     print(f"Next for team {playerName} , {player_queue[0].name} enters the battle!")
-    #     y = playerGame(moves, rocket_queue, player_queue, player_queue[0].HP)
-    # else:
-    #     y = playerGame(moves, rocket_queue, player_queue, s)
-    #
-    # if y == True:
-    #     if len(rocket_queue)==0:
-    #         print(f"All of Team Rocket’s Pokemon fainted, and Team {playerName} prevails!")
-    #         sys.exit()
-    #     rocket_queue.pop(0)
-    #     if len(rocket_queue)==0:
-    #         print(f"All of Team Rocket’s Pokemon fainted, and Team {playerName} prevails!")
-    #         sys.exit()
-    #     print(f"Next for team Rocket , {rocket_queue[0].name} enters the battle!")
-    #     t = rocketGame(moves, rocket_queue, player_queue, rocket_queue[0].HP)
-    # else:
-    #     t = rocketGame(moves, rocket_queue, player_queue, y)
-    #
-    # if t == True:
-    #     if len(player_queue)==0:
-    #         print(f"All of Team {playerName}’s Pokemon fainted, and Team Rocket  prevails!")
-    #         sys.exit()
-    #     player_queue.pop(0)
-    #     if len(player_queue)==0:
-    #         print(f"All of Team {playerName}’s Pokemon fainted, and Team Rocket  prevails!")
-    #         sys.exit()
-    #     print(f"Next for team {playerName} , {player_queue[0].name} enters the battle!")
-    #     y = playerGame(moves, rocket_queue, player_queue, player_queue[0].HP)
-    # else:
-    #     y = playerGame(moves, rocket_queue, player_queue, t)
-
 
 else:
     team = playerName
